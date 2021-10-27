@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:8080/quartz?characterEncoding=utf8&useSSL=true&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
+    username:root
+    password:yjbb666
+    type:com.alibaba.druid.pool.DruidDataSource
