@@ -1,7 +1,39 @@
+server:
+  port: 8888
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:8080/quartz?characterEncoding=utf8&useSSL=true&useSSL=false&allowMultiQueries=true&serverTimezone=UTC
-    username:root
-    password:yjbb666
-    type:com.alibaba.druid.pool.DruidDataSource
+    quartz:
+      url: jdbc:mysql://127.0.0.1:3306/quartz?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: yjbb666
+      type: com.alibaba.druid.pool.DruidDataSource
+  # Quartz ?????? QuartzProperties ???
+  quartz:
+    enabled: true
+#    scheduler-name: clusteredScheduler # Scheduler ?????? schedulerName
+#    job-store-type: jdbc # Job ????????? memory ??????? jdbc ??????
+#    auto-startup: true # Quartz ??????
+#    startup-delay: 0 # ?? N ???
+#    wait-for-jobs-to-complete-on-shutdown: true # ?????????????????????? false ?????? true
+#    overwrite-existing-jobs: false # ?????? Job ???
+#    properties: # ?? Quartz Scheduler ?????????? http://www.quartz-scheduler.org/documentation/2.4.0-SNAPSHOT/configuration.html ??
+#      org:
+#        quartz:
+#          # JobStore ????
+#          jobStore:
+#            # ?????
+#            dataSource: quartzDataSource # ??????
+#            class: org.quartz.impl.jdbcjobstore.JobStoreTX # JobStore ???
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#            tablePrefix: QRTZ_ # Quartz ???
+#            isClustered: true # ?????
+#            clusterCheckinInterval: 1000
+#            useProperties: false
+#          # ???????
+#          threadPool:
+#            threadCount: 25 # ????????? 10 ?
+#            threadPriority: 5 # ?????
+#            class: org.quartz.simpl.SimpleThreadPool # ?????
+#    jdbc: # ?? JDBC ? JobStore ????JDBC ???
+#      initialize-schema: never # ?????? SQL ??? Quartz ????????? never ???????????
