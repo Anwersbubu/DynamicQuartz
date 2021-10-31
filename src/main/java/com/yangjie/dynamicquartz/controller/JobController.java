@@ -119,7 +119,11 @@ public class JobController {
         }
     }
 
-    //修改某个Job执行的Cron
+    /**
+     * 修改定时
+     * @param dto
+     * @return
+     */
     @PostMapping("/modifyJob")
     public String modifyJob(@RequestBody @Validated ModifyCronDTO dto) {
         if (!CronExpression.isValidExpression(dto.getCron()))
