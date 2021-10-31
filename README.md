@@ -32,6 +32,7 @@ Scheduler为任务的调度器，它会将任务job及触发器Trigger整合起�
 
 五.Quartz的体系结构
 
+![](src/main/resources/static/image/1.png)
 
 六.Quartz的几个常用API
 以下是Quartz编程API几个重要接口，也是Quartz的重要组件
